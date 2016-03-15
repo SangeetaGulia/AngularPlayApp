@@ -1,0 +1,22 @@
+@(internForm:Form[repository.Intern])(implicit flash:Flash,messages:Messages)
+@import b3.vertical.fieldConstructor
+
+@main("internForm"){
+
+@if(flash.get("error").isDefined){
+<div class="alert alert-danger">
+    <strong>@flash.get("error")</strong>
+</div>
+}
+
+@b3.form(routes.InternController.showSubmittedInfo) {
+@b3.number( internForm("id"), '_label -> "Intern-ID", 'placeholder -> "Enter a number" )
+@b3.text( internForm("name"), '_label -> "Intern- Name", 'placeholder -> "Enter Name" )
+@b3.email( internForm("email"), '_label -> "Intern Email", 'placeholder -> "abc@xyz.com" )
+@b3.number( internForm("mobile"), '_label -> "Intern-Mobile", 'placeholder -> "Enter a number" )
+@b3.text( internForm("address"), '_label -> "Intern- Address", 'placeholder -> "Enter Address" )
+@b3.number( internForm("emergencyContact"), '_label -> "Emergency Contact Number", 'placeholder -> "Enter a number" )
+@b3.submit('class -> "btn btn-default"){ Sign in }
+}
+}
+

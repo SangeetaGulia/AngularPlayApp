@@ -1,0 +1,47 @@
+@main("Welcome to Play") {
+
+<div ng-controller="InternCtrl">
+    <h1>Welcome to Scala Play + Bootstrap + AngularJS</h1>
+
+     <Button class="btn btn-primary" ng-click="displayForm()"> Add Record </Button>
+
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>Emergency Contact</th>
+            </tr>
+            </thead>
+            <tbody>
+
+        <tr ng-repeat="intern in interns">
+
+                <td>{{intern.id}}</td>
+                <td>{{intern.name}}</td>
+                <td>{{intern.email}}</td>
+                <td>{{intern.mobile}}</td>
+                <td>{{intern.address}}</td>
+                <td>{{intern.emergencyContact}}</td>
+
+            </tr>
+
+            </tbody>
+        </table>
+
+        <input type="text" ng-model="delete" placeholder="Enter Id">
+        <Button class="btn btn-primary" ng-click="deleteById()"> Delete By Id </Button>
+
+
+    </div>
+</div>
+
+
+
+
+
+}
