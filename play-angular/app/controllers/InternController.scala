@@ -85,7 +85,6 @@ class InternController @Inject()(intern:InternRepo) extends Controller {
 
   def deleteIntern = Action { implicit request =>
     val id:Int=deleteForm.bindFromRequest.get
-    println("id :" + id)
     intern.deleteById(id)
     Ok(views.html.index())
 

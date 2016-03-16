@@ -8,6 +8,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.6"
 
+javaOptions in Test += "-Dconfig.file=conf/test.conf"
 
 libraryDependencies ++= Seq(
 
@@ -22,11 +23,13 @@ libraryDependencies ++= Seq(
   "org.scalatest"        %%    "scalatest"    	      %      "2.2.5"     %    "test",
   "com.h2database"       % 	   "h2"                       %      "1.4.187"    %   "test",
   "com.typesafe.play"   %%   "play-slick"              %   "1.1.1",
-
+  "com.typesafe.play" %% "play-slick-evolutions" % "1.1.1",
   "org.webjars" %% "webjars-play" % "2.4.0-1",
   "org.webjars" % "bootstrap" % "3.1.1-2"
 
 )
+
+coverageExcludedPackages :="<empty>;router\\..*;"
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"

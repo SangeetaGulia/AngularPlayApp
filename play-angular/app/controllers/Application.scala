@@ -5,7 +5,7 @@ import play.api.mvc._
 
 class Application extends Controller {
 
-
+/*
 
 
   def greet = Action { implicit request =>
@@ -21,6 +21,6 @@ class Application extends Controller {
   }
 
 
-
+*/
 
 }
